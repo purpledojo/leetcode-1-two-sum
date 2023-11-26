@@ -1,0 +1,25 @@
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        ind = 0
+        dictionary={}
+        
+        for num in nums:
+            dictionary[num] = ind
+            ind=ind+1
+
+        ind = 0
+
+        print (dictionary)
+        for num in nums:
+            need = target - num
+            if need in dictionary:
+                if dictionary.get(need) != ind:
+                       return (dictionary.get(need), ind)
+            ind=ind+1
+        
+            
